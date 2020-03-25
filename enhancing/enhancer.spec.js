@@ -132,13 +132,13 @@ describe("enhancers", () => {
       });
       it("returns name preceeded by enhancement (conditional)", () => {
         const expectedName = {
-          name: "[+2]Iron Sword",
+          name: '[+2]Iron Sword',
           durability: 100,
           enhancement: 2
         };
         expect(
           enhancer.get({
-            name: "Iron Sword",
+            name: 'Iron Sword',
             durability: 100,
             enhancement: 2
           })

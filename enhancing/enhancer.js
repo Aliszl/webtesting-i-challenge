@@ -51,9 +51,10 @@ function repair(item) {
 function get(item) {
   const initialName=item.name
   if(item.enhancement==0){
-    return { ...item };
+    return item;
   }else{
     return{
+      ...item,
       name:`[+${item.enhancement}]${initialName}`
     }
 
