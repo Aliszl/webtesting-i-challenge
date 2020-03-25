@@ -18,7 +18,7 @@ function succeed(item) {
 }
 
 function fail(item) {
-  
+
   let unEnhancedItem = item.enhancement -1
 let durabilityDec5 = item.durability-5
 let durabilityDec10 = item.durability-10
@@ -49,22 +49,29 @@ function repair(item) {
 }
 
 function get(item) {
-  return { ...item };
+  const initialName=item.name
+  if(item.enhancement===0){
+    return { ...item };
+  }else{
+    return{
+      name:`[+${item.enhancement}]${initialName}`
+    }
+
+  }
+ 
 }
 
-console.log(fail({
-  name:'a name',
+
+
+
+console.log(get({
+  name:'Iron Sword',
   durability:20,
-  enhancement:10
+  enhancement:2
 }))
 
-console.log(fail({
-  name:'a name',
+console.log(get({
+  name:'Iron Sword',
   durability:20,
-  enhancement:15
-}))
-console.log(fail({
-  name:'a name',
-  durability:20,
-  enhancement:17
+  enhancement:0
 }))
