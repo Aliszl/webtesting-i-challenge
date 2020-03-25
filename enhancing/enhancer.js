@@ -50,7 +50,7 @@ function repair(item) {
 
 function get(item) {
   const initialName=item.name
-  if(item.enhancement===0){
+  if(item.enhancement==0){
     return { ...item };
   }else{
     return{
@@ -60,7 +60,6 @@ function get(item) {
   }
  
 }
-
 
 console.log(get({
   name:'Iron Sword',

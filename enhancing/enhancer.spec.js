@@ -121,4 +121,29 @@ describe("enhancers", () => {
       ).toEqual(expectEnhanceDec1);
     });
   });
-});
+
+  describe("get", () => {
+    it("runs without crashing", () => {
+        enhancer.get({
+          name: "Iron Sword",
+          durability: 20,
+          enhancement: 2
+        });
+      });
+      it("returns name preceeded by enhancement (conditional)", () => {
+        const expectedName = {
+          name: "[+2]Iron Sword",
+          durability: 100,
+          enhancement: 2
+        };
+        expect(
+          enhancer.get({
+            name: "Iron Sword",
+            durability: 100,
+            enhancement: 2
+          })
+        ).toEqual(expectedName);
+
+  })
+  })
+})
