@@ -62,8 +62,6 @@ function get(item) {
 }
 
 
-
-
 console.log(get({
   name:'Iron Sword',
   durability:20,
